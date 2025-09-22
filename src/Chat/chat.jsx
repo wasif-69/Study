@@ -17,7 +17,7 @@ export default function Chat() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://127.0.0.1:5000/study", {
+      const res = await fetch("https://aimateserver.onrender.com/study", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
