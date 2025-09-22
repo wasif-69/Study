@@ -30,7 +30,7 @@ export default function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} LectureHub. Built for learners ❤️</p>
+        <p>© {new Date().getFullYear()} Umeed Academy. Built for learners ❤️</p>
       </div>
     </footer>
   );
