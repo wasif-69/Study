@@ -1,6 +1,6 @@
 // src/pages/Chat.jsx
 import { useState, useRef, useEffect } from "react";
-import "./Chat.css";
+import "./chat.css";
 
 export default function Chat() {
   const [input, setInput] = useState("");
