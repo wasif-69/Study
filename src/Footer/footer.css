@@ -1,39 +1,44 @@
+/* Footer Base */
 .site-footer {
-  background-color: #f5f8ff;
-  padding: 2rem 1rem 1rem;
-  border-top: 1px solid #e0e0e0;
+  background-color: var(--color-header);
   color: var(--color-text);
-  font-size: 0.95rem;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--color-hover);
+  transition: background-color 0.3s, color 0.3s;
 }
 
+/* Footer Container */
 .footer-container {
-  max-width: 1200px;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
   gap: 2rem;
 }
 
+/* Brand */
 .footer-brand h2 {
   font-size: 1.6rem;
+  margin-bottom: 0.5rem;
   color: var(--color-primary);
-  margin: 0;
 }
 
-.footer-brand h2 span {
+.footer-brand span {
   color: var(--color-text);
 }
 
 .footer-brand p {
-  margin-top: 0.5rem;
-  color: #555;
+  margin: 0;
+  font-size: 0.95rem;
 }
 
+/* Links */
 .footer-links h4,
 .footer-socials h4 {
-  margin-bottom: 0.6rem;
-  color: var(--color-primary);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  color: var(--color-text);
 }
 
 .footer-links ul {
@@ -42,50 +47,50 @@
   margin: 0;
 }
 
-.footer-links ul li {
-  margin-bottom: 0.4rem;
+.footer-links li {
+  margin-bottom: 0.5rem;
 }
 
-.footer-links ul li a {
+.footer-links a {
+  color: var(--color-text);
   text-decoration: none;
-  color: var(--color-text);
-  transition: color 0.2s ease;
+  transition: color 0.2s;
 }
 
-.footer-links ul li a:hover {
+.footer-links a:hover {
   color: var(--color-primary);
 }
 
-.footer-socials .social-icons a {
-  margin-right: 10px;
-  font-size: 1.2rem;
+/* Socials */
+.social-icons a {
   color: var(--color-text);
-  transition: color 0.2s ease;
+  margin-right: 1rem;
+  font-size: 1.3rem;
+  transition: color 0.2s;
 }
 
-.footer-socials .social-icons a:hover {
+.social-icons a:hover {
   color: var(--color-primary);
 }
 
+/* Footer Bottom */
 .footer-bottom {
   text-align: center;
   margin-top: 2rem;
-  font-size: 0.85rem;
-  color: #888;
+  border-top: 1px solid var(--color-hover);
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-text);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
   }
 
-  .footer-links ul,
-  .footer-socials {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .footer-bottom {
+    text-align: left;
   }
 }

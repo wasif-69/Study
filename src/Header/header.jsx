@@ -1,49 +1,61 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Header.css";
+import logo from "../assets/Untitled image.png";
 
 export default function Header() {
   const [darkMode, setDarkMode] = useState(() => {
     const saved = localStorage.getItem("darkMode");
-    if (saved !== null) return JSON.parse(saved);
-    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return saved ? JSON.parse(saved) : window.matchMedia("(prefers-color-scheme: dark)").matches;
   });
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode);
     localStorage.setItem("darkMode", JSON.stringify(darkMode));
   }, [darkMode]);
 
+  useEffect(() => {
+    // Auto-close menu on route change
+    setMenuOpen(false);
+  }, [location]);
+
   return (
     <header className="site-header">
       <div className="header-container">
         <div className="site-logo">
-          <Link to="/">🎓 Lecture<span>Hub</span></Link>
+          <Link to="/" className="logo-link" aria-label="Home">
+            <img src={logo} alt="Umeed Academy Logo" />
+            <span className="brand-name">
+              Umeed <span className="highlight">Academy</span>
+            </span>
+          </Link>
         </div>
 
         <nav className={`site-nav ${menuOpen ? "open" : ""}`}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/chat">AI CHAT!</Link>
-          <Link to="/upload">Upload Lecture </Link>
-          <Link to="/exp">Watch Lectures</Link>
-          {/* Add more links like About, Upload, etc. */}
+          <Link to="/">🏠 Home</Link>
+          <Link to="/chat">🤖 AI Chat</Link>
+          <Link to="/upload">⬆️ Upload</Link>
+          <Link to="/exp">📚 Lectures</Link>
         </nav>
 
         <div className="header-actions">
           <button
             className="theme-toggle"
-            onClick={() => setDarkMode(prev => !prev)}
-            title="Toggle Theme"
+            onClick={() => setDarkMode((prev) => !prev)}
+            title="Toggle Dark Mode"
+            aria-label="Toggle Theme"
           >
             {darkMode ? "🌞" : "🌙"}
           </button>
 
           <button
             className="menu-toggle"
-            onClick={() => setMenuOpen(prev => !prev)}
+            onClick={() => setMenuOpen((prev) => !prev)}
             title="Menu"
+            aria-label="Toggle Menu"
           >
             ☰
           </button>

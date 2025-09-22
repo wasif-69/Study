@@ -1,4 +1,4 @@
-/* Base Theme Variables */
+/* ===== Base Theme Variables ===== */
 :root {
   --color-bg: #ffffff;
   --color-text: #1e1e1e;
@@ -6,6 +6,9 @@
   --color-hover: #003fcc;
   --color-header: #f9f9f9;
   --shadow-header: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-fast: 0.2s;
+  --transition-med: 0.3s;
+  --radius: 8px;
 }
 
 .dark {
@@ -17,21 +20,22 @@
   --shadow-header: 0 2px 6px rgba(255, 255, 255, 0.05);
 }
 
-/* Reset + Typography */
+/* ===== Global Reset & Base Typography ===== */
 body {
   margin: 0;
   font-family: "Segoe UI", sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color var(--transition-med), color var(--transition-med);
 }
 
-/* Header Layout */
+/* ===== Header Layout ===== */
 .site-header {
   background-color: var(--color-header);
   box-shadow: var(--shadow-header);
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 100;
 }
 
@@ -44,40 +48,55 @@ body {
   justify-content: space-between;
 }
 
-/* Logo */
+/* ===== Logo Styles ===== */
 .site-logo a {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
   font-size: 1.6rem;
   font-weight: 700;
   color: var(--color-primary);
   text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.site-logo img {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  object-fit: cover;
 }
 
 .site-logo span {
   color: var(--color-text);
+  font-weight: 600;
 }
 
-/* Nav Links */
+/* ===== Navigation ===== */
 .site-nav {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
+  transition: transform var(--transition-med);
 }
 
 .site-nav a {
   color: var(--color-text);
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s;
+  transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
 .site-nav a:hover {
   color: var(--color-primary);
+  transform: translateY(-1px);
 }
 
-/* Right Side Buttons */
+/* ===== Header Actions ===== */
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
 .theme-toggle,
@@ -87,7 +106,7 @@ body {
   font-size: 1.3rem;
   cursor: pointer;
   color: var(--color-text);
-  transition: transform 0.2s;
+  transition: color var(--transition-fast), transform var(--transition-fast);
 }
 
 .theme-toggle:hover,
@@ -96,44 +115,40 @@ body {
   color: var(--color-primary);
 }
 
-/* Mobile: Hide menu toggle by default */
+/* ===== Mobile Navigation ===== */
 .menu-toggle {
   display: none;
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
-  /* Show hamburger menu button */
   .menu-toggle {
     display: inline-block;
   }
 
-  /* Hide nav links by default - slide from right */
   .site-nav {
     position: fixed;
-    top: 60px; /* below header */
+    top: 64px;
     right: 0;
     background-color: var(--color-header);
     flex-direction: column;
-    width: 220px;
-    height: calc(100vh - 60px);
+    width: 250px;
+    height: calc(100vh - 64px);
     padding: 2rem 1.5rem;
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    border-radius: 8px 0 0 8px;
-    z-index: 1000;
+    transition: transform var(--transition-med) ease-in-out;
+    border-radius: var(--radius) 0 0 var(--radius);
+    z-index: 999;
   }
 
-  /* When menu is open, translateX to 0 */
   .site-nav.open {
     transform: translateX(0);
   }
 
-  /* Nav links stacked */
   .site-nav a {
-    padding: 0.8rem 0;
+    width: 100%;
     font-size: 1.1rem;
+    padding: 0.8rem 0;
     border-bottom: 1px solid var(--color-hover);
   }
 
