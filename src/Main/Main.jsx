@@ -8,7 +8,7 @@ export default function Main() {
         <h1>
           Welcome to <span>Umeed Academy</span>
         </h1>
-        <p>The best place for the best students. Learn faster. Learn smarter.</p>
+        <p>Equality. Empowerment. Innovation</p>
         {/* Optional: Add a button to browse lectures */}
         <a href="#lectures" className="cta-button">Explore Lectures</a>
       </div>
