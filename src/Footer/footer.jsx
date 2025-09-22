@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="footer-container">
         <div className="footer-brand">
-          <h2>Umheed<span>Academy</span></h2>
+          <h2>Umeed<span>Academy</span></h2>
           <p>📚 Empowering Pakistani students with knowledge, one lecture at a time.</p>
         </div>
 
