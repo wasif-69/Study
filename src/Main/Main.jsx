@@ -6,7 +6,7 @@ export default function Main() {
     <main className="main-hero">
       <div className="hero-content">
         <h1>
-          Welcome to <span>LectureHub</span>
+          Welcome to <span>Umeed Academy</span>
         </h1>
         <p>The best place for the best students. Learn faster. Learn smarter.</p>
         {/* Optional: Add a button to browse lectures */}
