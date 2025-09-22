@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-container">
         <div className="footer-brand">
           <h2>Lecture<span>Hub</span></h2>
-          <p>📚 Empowering Gen-Z with knowledge, one lecture at a time.</p>
+          <p>📚 Empowering Pakistani students with knowledge, one lecture at a time.</p>
         </div>
 
         <div className="footer-links">

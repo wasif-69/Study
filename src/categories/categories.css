@@ -66,3 +66,19 @@
     font-size: 1.3rem;
   }
 }
+
+
+.categories-section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 3rem 1.5rem; /* Increased top & bottom padding for more height */
+  text-align: center;
+  border: 3px solid #1e3a8a;
+  border-radius: 15px;
+  background-color: #f0f7ff;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+  min-height: 400px; /* Optional: set a minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centers content vertically */
+}
